@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{E547914E-B485-40F8-904D-F29372EFA07F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlAgiltyPack", "HtmlAgiltyPack\HtmlAgiltyPack.csproj", "{B5619F1F-5988-4CC6-ACE1-6BBD63ED05CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlAgiltyPack", "HtmlAgiltyPack\HtmlAgiltyPack.csproj", "{B5619F1F-5988-4CC6-ACE1-6BBD63ED05CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballAnalysisUI", "FootballAnalysisUI\FootballAnalysisUI.csproj", "{CFD3D615-5E86-4282-B0B2-16CF983D333C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B5619F1F-5988-4CC6-ACE1-6BBD63ED05CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5619F1F-5988-4CC6-ACE1-6BBD63ED05CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5619F1F-5988-4CC6-ACE1-6BBD63ED05CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD3D615-5E86-4282-B0B2-16CF983D333C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD3D615-5E86-4282-B0B2-16CF983D333C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD3D615-5E86-4282-B0B2-16CF983D333C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD3D615-5E86-4282-B0B2-16CF983D333C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

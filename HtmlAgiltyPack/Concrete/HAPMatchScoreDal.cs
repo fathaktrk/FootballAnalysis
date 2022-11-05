@@ -10,9 +10,10 @@ namespace HtmlAgiltyPack.Concrete
 {
     public class HAPMatchScoreDal
     {
-        public HAPMatchScoreDal()
+        public HAPMatchScoreDal(TeamInfo teamInfo)
         {
             WebHtml = new HtmlWeb();
+            TeamInfo = teamInfo;
         }
 
         public HtmlWeb WebHtml { get; set; }
