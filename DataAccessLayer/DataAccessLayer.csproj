@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+    <ProjectReference Include="..\HtmlAgiltyPack\HtmlAgiltyPack.csproj" />
   </ItemGroup>
 
   <ItemGroup>
