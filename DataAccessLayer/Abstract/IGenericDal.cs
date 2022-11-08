@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public  interface IGenericDal<T> where T : class
+    public interface IGenericDal<T> where T : class
     {
         public void Add(T t);
         public void Add(List<T> list);

@@ -20,6 +20,7 @@ namespace HtmlAgiltyPack.Concrete
         public List<MatchScore> MatchScores { get; set; }
         public TeamInfo TeamInfo { get; set; }
 
+       
 
         public List<MatchScore> GetMatchScores(int year)
         {
@@ -44,5 +45,6 @@ namespace HtmlAgiltyPack.Concrete
             }
             return MatchScores;
         }
+
     }
 }

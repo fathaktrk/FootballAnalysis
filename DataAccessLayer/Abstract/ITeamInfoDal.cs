@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ISeasonDal : IGenericDal<Season>
+    public interface ITeamInfoDal : IGenericDal<TeamInfo>
     {
-        
+        public TeamInfo URLParser(string teamName, string URL);
     }
 }

@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
         }
         public void Add(MatchScore t)
         {
-            throw new NotImplementedException();
+            _matchScoreDal.Add(t);
         }
 
         public void Add(List<MatchScore> list)
         {
-            throw new NotImplementedException();
+            _matchScoreDal.Add(list);
         }
 
         public List<MatchScore> ListAll()
