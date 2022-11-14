@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@addTagHelper *, Microsoft.AspNetCore.MVC.TagHelpers
+@model List<TeamInfo>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<div>
+    <h3>Takım Listesi</h3>
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.RealTeamName</td>
+                <td>@item.InUrlTeamName</td>
+                <td>@item.InUrlTeamNumber</td>
+                <td>
+                    <button class="btn-success"> <a href="Index?ID=@item.ID.ToString()">  Git </a> </button>
+
+            </td>
+            </tr>
+        }
+    </table>
+</div>

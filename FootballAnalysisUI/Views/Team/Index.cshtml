@@ -1,0 +1,68 @@
+﻿@model List<EntityLayer.Concrete.MatchScore>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div>
+    <table class="text-center">
+        <th>Sıra No</th>
+        <th>Takım Adı</th>
+        <th>Rakip Takım</th>
+        <th>Ev Sahibi Skor</th>
+        <th>Deplasman Skor</th>
+        <th>Sezon</th>
+        @{
+            int i = 1;
+        }
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@i.ToString()</td>
+                    <td> @item.Name </td>
+                    <td> @item.OpponentName </td>
+                    @if (item.HomeScore > item.OpponentScore)
+                    {
+                        <td class="bg-success"> @item.HomeScore </td>
+                    }
+                    else if (item.HomeScore < item.OpponentScore)
+                    {
+                        <td class="bg-danger"> @item.HomeScore </td>
+                    }
+                    else if (item.HomeScore == item.OpponentScore)
+                    {
+                        <td class="bg-info"> @item.HomeScore </td>
+                    }
+
+                    @if (item.HomeScore < item.OpponentScore)
+                    {
+                        <td class="bg-success"> @item.OpponentScore </td>
+                    }
+                    else if (item.HomeScore > item.OpponentScore)
+                    {
+                        <td class="bg-danger"> @item.OpponentScore </td>
+                    }
+                    else if (item.HomeScore == item.OpponentScore)
+                    {
+                        <td class="bg-info"> @item.OpponentScore </td>
+                    }
+                    <td>@item.Season_ID </td>
+                </tr>
+                        i++;        
+            }
+        </tbody>
+    </table>
+</div>
