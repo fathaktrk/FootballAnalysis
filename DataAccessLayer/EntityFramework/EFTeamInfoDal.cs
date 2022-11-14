@@ -37,11 +37,11 @@ namespace DataAccessLayer.EntityFramework
 
         public TeamInfo URLParser(string teamName, string URL) { 
         
-                string[] URLSplit = URL.Split('/'); //URL'yi '/' olan yerlerden ayırdık.
-                string[] URLList = new string[] { URLSplit[3], URLSplit[6] }; //URLSplit[3]-> Fenerbahçe, URLSplit[6]->36 (Fenerbahçenin ID'si)
-            return new TeamInfo(){
+                string[] URLSplit = URL.Split('/');
+                string[] URLList = new string[] { URLSplit[3], URLSplit[6] };
+                return new TeamInfo(){
                         InUrlTeamName = URLSplit[3], 
-                        InUrlTeamNumber = Convert.ToInt16(URLSplit[6]),      //Bu verileri TeamInfo classı olarak dönderiyor.
+                        InUrlTeamNumber = Convert.ToInt16(URLSplit[6]),
                         RealTeamName = teamName
                     };
         }
