@@ -1,12 +1,16 @@
-﻿<div class="col-4">
-    <div class="card">
+﻿<div class="col-3">
+    <div class="card h-50">
         <div class="card-header">
             <center> <h4>Sezon Bilgileri </h4> </center>
             <p>Sezon bilgilerini çekmek için yılı giriniz.</p>
         </div>
         <div class="card-body">
             <center><img src="https://tmssl.akamaized.net/images/logo/header/tr1.png?lm=1639084065" title="Süper Lig" alt="Süper Lig" class=""> </center>
-            <input class="form-control" name="Year" placeholder="Yıl Giriniz" />
+            <form asp-controller="Admin" asp-action="AddSeasonInfo" method="post">
+                <input class="form-control" name="year" placeholder="Yıl Giriniz" />
+                <br />
+                <center>  <button type="submit" class="btn btn-primary"> Çek ve Kaydet </button> </center>
+            </form>
         </div>
     </div>
 </div>

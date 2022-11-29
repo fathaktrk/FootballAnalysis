@@ -13,7 +13,6 @@ namespace BusinessLayer.Concrete
     {
         ISeasonDal _seasonDal;
        
-
         public SeasonManager(ISeasonDal seasonDal)
         {
             _seasonDal = seasonDal;

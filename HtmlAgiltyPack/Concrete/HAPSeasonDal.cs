@@ -13,6 +13,8 @@ namespace HtmlAgiltyPack.Concrete
         public HAPSeasonDal()
         {
             HtmlWeb = new HtmlWeb();
+            Season = new Season();
+
         }
 
         public HtmlWeb HtmlWeb { get; set; }
@@ -27,7 +29,6 @@ namespace HtmlAgiltyPack.Concrete
             Season.SeasonYear = year;
             Season.GoalKing = doc.DocumentNode.SelectSingleNode(xpath: "//table[@class='inline-table']").InnerText.Replace("Santrafor", "").Replace("On Numara", "").Replace("Sağ Kanat", "").Replace("Sol Kanat", "").Replace("Merkez orta saha", "");
             Season.GoalKingScore = Convert.ToInt16(doc.DocumentNode.SelectSingleNode(xpath: "//*[@id=\"yw2\"]/table/tbody/tr[1]/td[5]").InnerText);
-            Season.ID = 1;
             return Season;
         }
 
