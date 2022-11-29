@@ -1,0 +1,82 @@
+﻿@model List<EntityLayer.Concrete.MatchScore>
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+</style>
+
+<div>
+    <table id="customers">
+        <thead>
+        <th>
+            S.N.
+        </th>
+        <th>
+            Takım
+        </th>
+        <th>
+            Rakip Takım
+        </th>
+        <th>
+            Ev Sahibi Skor
+        </th>
+        <th>
+            Deplasman Skor
+        </th>
+        <th>
+            Sezon
+        </th>
+        </thead>
+        @{
+            int i = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @i.ToString()
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.OpponentName
+                </td>
+                <td>
+                    @item.HomeScore
+                </td>
+                <td>
+                    @item.OpponentScore
+                </td>
+                <td>
+                    @item.date
+                </td>
+            </tr>
+            i++;
+        }
+
+    </table>
+</div>

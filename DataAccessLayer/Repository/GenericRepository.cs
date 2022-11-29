@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,23 @@ namespace DataAccessLayer.Repository
     {
         public void Add(T t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Add(t);
+                ctx.SaveChanges();
+            }
         }
 
         public void Add(List<T> list)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                foreach (var item in list)
+                {
+                    ctx.Add(item);
+                }
+                ctx.SaveChanges();
+            }
         }
 
         public List<T> ListAll()
@@ -26,12 +38,20 @@ namespace DataAccessLayer.Repository
 
         public void Remove(T t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Remove(t);
+                ctx.SaveChanges();
+            }
         }
 
         public void Update(T t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Update(t);
+                ctx.SaveChanges();
+            }
         }
     }
 }

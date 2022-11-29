@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,23 @@ namespace DataAccessLayer.EntityFramework
     {
         public void Add(TeamInfo t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Add(t);
+                ctx.SaveChanges();
+            }
         }
 
         public void Add(List<TeamInfo> list)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                foreach (var item in list)
+                {
+                    ctx.Add(item);
+                }
+                ctx.SaveChanges();
+            }
         }
 
         public List<TeamInfo> ListAll()
@@ -27,12 +39,20 @@ namespace DataAccessLayer.EntityFramework
 
         public void Remove(TeamInfo t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Remove(t);
+                ctx.SaveChanges();
+            }
         }
 
         public void Update(TeamInfo t)
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                ctx.Update(t);
+                ctx.SaveChanges();
+            }
         }
 
         public TeamInfo URLParser(string teamName, string URL) { 

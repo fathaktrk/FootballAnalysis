@@ -13,6 +13,8 @@ namespace EntityLayer.Concrete
         public string OpponentName { get; set; }
         public int HomeScore { get; set; }
         public int OpponentScore { get; set; }
-        public int Season_ID { get; set; }
+        public string date { get; set; }
+        public int SeasonID { get; set; }
+        public Season Season { get; set; }
     }
 }

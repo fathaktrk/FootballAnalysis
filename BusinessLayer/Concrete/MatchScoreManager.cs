@@ -30,17 +30,17 @@ namespace BusinessLayer.Concrete
 
         public List<MatchScore> ListAll()
         {
-            throw new NotImplementedException();
+           return _matchScoreDal.ListAll();
         }
 
         public void Remove(MatchScore t)
         {
-            throw new NotImplementedException();
+            _matchScoreDal.Remove(t);
         }
 
         public void Update(MatchScore t)
         {
-            throw new NotImplementedException();
+            _matchScoreDal.Update(t);
         }
     }
 }

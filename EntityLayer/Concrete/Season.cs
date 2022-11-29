@@ -13,6 +13,8 @@ namespace EntityLayer.Concrete
         public string Champion { get; set; }
         public string GoalKing { get; set; }
         public int GoalKingScore { get; set; }
+        public ICollection<MatchScore> MatchScore { get; set; }
+
 
     }
 }
