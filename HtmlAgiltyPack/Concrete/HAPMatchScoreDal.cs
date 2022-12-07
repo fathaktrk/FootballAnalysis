@@ -26,8 +26,9 @@ namespace HtmlAgiltyPack.Concrete
         public List<MatchScore> GetMatchScores(int year)
         {
             string urlAdress = "https://www.transfermarkt.com.tr/" + TeamInfo.InUrlTeamName + "/spielplandatum/verein/" + TeamInfo.InUrlTeamNumber + "/0?saison_id=" + year + "&wettbewerb_id=TR1&day=&heim_gast=heim&punkte=&datum_von=-&datum_bis=-";
+            //üstteki satırda urldeki parametrelerde takım adı , takım numarası ve yıla göre değişen urli elde ettik
             var doc = WebHtml.Load(urlAdress);
-            HtmlNodeCollection htmlNodes = doc.DocumentNode.SelectNodes(xpath: "//tr[@style='']");
+            HtmlNodeCollection htmlNodes = doc.DocumentNode.SelectNodes(xpath: "//tr[@style='']");//relatif xpath adresleri slaytta anlatıcam
 
             foreach (var item in htmlNodes)
             {
@@ -47,7 +48,7 @@ namespace HtmlAgiltyPack.Concrete
             return MatchScores;
         }
 
-        public List<MatchScore> GetAllMatchScores(int year)
+        public List<MatchScore> GetAllMatchScores(int year)// tüm maç skorlarının çekildiği yer.
         {
             string urlAdress = "https://www.transfermarkt.com.tr/" + TeamInfo.InUrlTeamName + "/spielplandatum/verein/" + TeamInfo.InUrlTeamNumber + "/0?saison_id=&wettbewerb_id=&day=&heim_gast=heim&punkte=&datum_von=&datum_bis=";
             var doc = WebHtml.Load(urlAdress);
