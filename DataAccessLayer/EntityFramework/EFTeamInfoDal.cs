@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Context;
+using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,52 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFTeamInfoDal : IGenericDal<TeamInfo>, ITeamInfoDal
+    public class EFTeamInfoDal : GenericDal<TeamInfo>, ITeamInfoDal
     {
-        public void Add(TeamInfo t)
-        {
-            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
-            {
-                ctx.Add(t);
-                ctx.SaveChanges();
-            }
-        }
-
-        public void Add(List<TeamInfo> list)
-        {
-            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
-            {
-                foreach (var item in list)
-                {
-                    ctx.Add(item);
-                }
-                ctx.SaveChanges();
-            }
-        }
-
-        public List<TeamInfo> ListAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(TeamInfo t)
-        {
-            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
-            {
-                ctx.Remove(t);
-                ctx.SaveChanges();
-            }
-        }
-
-        public void Update(TeamInfo t)
-        {
-            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
-            {
-                ctx.Update(t);
-                ctx.SaveChanges();
-            }
-        }
-
         public TeamInfo URLParser(string teamName, string URL)
         //urlin parçalara ayrılım takımın adını ve takımın numrasını aldığı metot
             { 
