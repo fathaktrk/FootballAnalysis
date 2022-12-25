@@ -21,8 +21,6 @@ namespace HtmlAgiltyPack.Concrete
         public List<MatchScore> MatchScores { get; set; }
         public TeamInfo TeamInfo { get; set; }
 
-       
-
         public List<MatchScore> GetMatchScores(int year)
         {
             string urlAdress = "https://www.transfermarkt.com.tr/" + TeamInfo.InUrlTeamName + "/spielplandatum/verein/" + TeamInfo.InUrlTeamNumber + "/0?saison_id=" + year + "&wettbewerb_id=TR1&day=&heim_gast=heim&punkte=&datum_von=-&datum_bis=-";

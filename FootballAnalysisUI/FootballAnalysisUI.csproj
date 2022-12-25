@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="wwwroot\assets\img\superliglogo.png" />
   </ItemGroup>
 
   <ItemGroup>
