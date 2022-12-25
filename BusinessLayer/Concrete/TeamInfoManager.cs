@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public List<TeamInfo> ListAll()
         {
-            throw new NotImplementedException();
+           return _teamInfoDal.ListAll();
         }
 
         public void Remove(TeamInfo t)

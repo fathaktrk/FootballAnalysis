@@ -33,7 +33,10 @@ namespace DataAccessLayer.Repository
 
         public List<T> ListAll()
         {
-            throw new NotImplementedException();
+            using (FootballAnalysisContext ctx = new FootballAnalysisContext())
+            {
+                return ctx.Set<T>().ToList();
+            }
         }
 
         public void Remove(T t)

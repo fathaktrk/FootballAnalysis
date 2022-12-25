@@ -61,13 +61,14 @@ namespace DataAccessLayer.EntityFramework
         
                 string[] URLSplit = URL.Split('/');
                 string[] URLList = new string[] { URLSplit[3], URLSplit[6] };
-                /*https://www.transfermarkt.com.tr/fenerbahce-istanbul/startseite/verein/36*/
-                //.   0 ^^            2           ^      3            ^   4      ^  5   ^ 6
-                return new TeamInfo(){
-                        InUrlTeamName = URLSplit[3] ;
-                        InUrlTeamNumber = Convert.ToInt16(URLSplit[6]);
-                        RealTeamName = teamName;
-            }
+            /*https://www.transfermarkt.com.tr/fenerbahce-istanbul/startseite/verein/36*/
+            //.   0 ^^            2           ^      3            ^   4      ^  5   ^ 6
+            return new TeamInfo()
+            {
+                InUrlTeamName = URLSplit[3],
+                InUrlTeamNumber = Convert.ToInt16(URLSplit[6]),
+                RealTeamName = teamName,
+            };
         }
     }
 }
