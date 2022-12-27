@@ -52,21 +52,38 @@ namespace FootballAnalysisUI.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult AddTeam(string teamName, string URL)
+        public string AddTeam(string teamName, string URL)
         {
             TeamInfoManager teamInfoManager = new TeamInfoManager(new EFTeamInfoDal());
-            teamInfoManager.Add(teamInfoManager.URLParser(teamName, URL));
-            return RedirectToAction("Index");
+            var list = teamInfoManager.ListAll().Where(x => x.RealTeamName == teamName).ToList();
+
+            if (list.Count > 0)
+            {
+                return "Takım zaten ekli.";
+            }
+            else
+            {
+                teamInfoManager.Add(teamInfoManager.URLParser(teamName, URL));
+                return "Başarılı";
+            }
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult AddSeasonInfo(int year)
+        public string AddSeasonInfo(int year)
         {
             HAPSeasonDal seasonDal = new HAPSeasonDal();
             SeasonManager seasonManager = new SeasonManager(new EfSeasonDal());
-            seasonManager.Add(seasonDal.GetSeasonInfos(year));
-            return RedirectToAction("Index");
+            int control = seasonManager.ListAll().Where(x => x.SeasonYear == year).ToList().Count;
+            if (control > 0)
+            {
+                return year.ToString() + " yılının verileri zaten çekilmiş.";
+            }
+            else
+            {
+                seasonManager.Add(seasonDal.GetSeasonInfos(year));
+                return "Başarılı";
+            }
         }
 
         [Authorize(Roles = "Admin")]

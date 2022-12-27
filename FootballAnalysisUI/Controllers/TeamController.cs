@@ -62,6 +62,9 @@ namespace FootballAnalysisUI.Controllers
             TeamInfoManager teamInfoManager = new TeamInfoManager(new EFTeamInfoDal());
             var teamInfos = teamInfoManager.ListAll();
             Compare cmp = new Compare();
+            cmp.TeamOneID = Convert.ToInt16(team1);
+            cmp.TeamTwoID = Convert.ToInt16(team2);
+
             cmp.TeamOneName = teamInfos.FirstOrDefault(x => x.ID == Convert.ToInt16(team1)).RealTeamName;
             cmp.TeamTwoName = teamInfos.FirstOrDefault(x => x.ID == Convert.ToInt16(team2)).RealTeamName; ;
             cmp.TeamOneURLNumber = teamInfos.FirstOrDefault(x => x.ID == Convert.ToInt16(team1)).InUrlTeamNumber;

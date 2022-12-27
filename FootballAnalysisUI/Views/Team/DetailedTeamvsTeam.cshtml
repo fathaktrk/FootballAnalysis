@@ -26,6 +26,12 @@
                     </div>
                 </div>
                 <p class="text-black">İki takım arasında yapılan maçlara göre tüm istatistikler.</p>
+                <form method="post" asp-controller="Team" asp-action="AllTeamMatchesBetweenTwoTeam">
+                    <label class="text-black">İki takım arasındaki tüm maçlara gitmek için tıklayınız.</label> 
+                    <input name="team1" type="hidden" value="@Model.TeamOneID" />
+                    <input name="team2" type="hidden" value="@Model.TeamTwoID" />
+                     <input class="btn btn-success" type="submit" value="Git"/>
+                    </form>
             </center>
         </div>
         <div class="row">

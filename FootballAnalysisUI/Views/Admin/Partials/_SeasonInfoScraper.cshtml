@@ -6,11 +6,23 @@
         </div>
         <div class="card-body">
             <center><img src="https://tmssl.akamaized.net/images/logo/header/tr1.png?lm=1639084065" title="Süper Lig" alt="Süper Lig" class=""> </center>
-            <form asp-controller="Admin" asp-action="AddSeasonInfo" method="post">
-                <input class="form-control" name="year" placeholder="Yıl Giriniz" />
+                <input class="form-control" name="year" id="YearText" placeholder="Yıl Giriniz" />
                 <br />
-                <center>  <button type="submit" class="btn btn-primary"> Çek ve Kaydet </button> </center>
-            </form>
+                <center>  <button type="submit" class="btn btn-primary" id="addSeasonInfo"> Çek ve Kaydet </button> </center>
         </div>
     </div>
 </div>
+<script>
+    $("#addSeasonInfo").click(() => {
+        $.post("AddSeasonInfo", { "year": $("#YearText").val() }, function (data) {
+
+            if (data == "Başarılı") {
+                $("#successModal").modal('show');
+            }
+            else {
+                $("#errorMessage").html(data);
+                $("#failModal").modal('show');
+            }
+        });
+    });
+</script>

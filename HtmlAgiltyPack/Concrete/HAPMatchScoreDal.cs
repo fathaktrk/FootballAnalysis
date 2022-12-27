@@ -55,7 +55,16 @@ namespace HtmlAgiltyPack.Concrete
             foreach (var item in htmlNodes)
             {
                 string opponent = item.SelectSingleNode("./td[@class='no-border-links hauptlink']/a").InnerText;
-                string date = item.SelectSingleNode("./td[@class='zentriert ']").InnerText;
+                string date = "";
+                if (item.SelectSingleNode("./td[@class='zentriert ']") != null)
+                {
+                     date = item.SelectSingleNode("./td[@class='zentriert ']").InnerText;
+                } 
+                else
+                {
+                     date = "Hata";
+                }
+               
                 string score = item.SelectSingleNode("./td/a/span").InnerText;
                 string[] scores = score.Split(':');
                 MatchScores.Add(new MatchScore()

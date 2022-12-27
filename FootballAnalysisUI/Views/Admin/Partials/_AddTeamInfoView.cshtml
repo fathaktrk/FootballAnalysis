@@ -7,24 +7,37 @@
             <p>Takım Bilgilerini kaydetmek için bilgileri giriniz.</p>
         </div>
         <div class="card-body">
-            <form asp-action="AddTeam" asp-controller="Admin" method="post">
                 <label>
                     Transfermarkt Takıma ait URL adresini giriniz.
                 </label>
                 <br />
-                <input class="form-control" name="URL" />
+                <input class="form-control" name="URL" id="URLText" />
                 <br />
                 <label>
                     Takımın Tam Adını Giriniz:
                 </label>
                 <br />
-                <input class="form-control" name="TeamName" />
+                <input class="form-control" name="TeamName"  id="TeamNameText" />
                 <br />
-                <center> <button type="submit" class="btn btn-primary">Veritabanına Ekle</button> </center>
+                <center> <button type="submit" class="btn btn-primary" id="addTeam">Veritabanına Ekle</button> </center>
                 </input>
                 <label>@Model</label>
-            </form>
             <br />
         </div>
     </div>
 </div>
+<!--https: //www.transfermarkt.com.tr/galatasaray/spielplandatum/verein/141/0?saison_id =2021&wettbewerb_id =TR1&day =&heim_gast =heim&punkte =&datum_von =-&datum_bis = Örnek LİNK--->
+<script>
+    $("#addTeam").click(() => {
+        $.post("AddTeam", { "URL": $("#URLText").val(), "TeamName": $("#TeamNameText").val() }, function (data) {
+
+            if (data == "Başarılı") {
+                $("#successModal").modal('show');
+            }
+            else {
+                $("#errorMessage").html(data);
+                $("#failModal").modal('show');
+            }
+        });
+    });
+</script>

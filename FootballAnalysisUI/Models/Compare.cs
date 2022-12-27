@@ -23,7 +23,9 @@
         public int TeamTwoURLNumber { get; set; }
         public int TeamOneHomeDraw { get; set; }
         public int TeamTwoHomeDraw { get; set; }
-
+        public int TeamOneID { get; set; }
+        public int TeamTwoID { get; set; }
+     
         public Compare()
         {
             TeamOneGoalAll = 0;

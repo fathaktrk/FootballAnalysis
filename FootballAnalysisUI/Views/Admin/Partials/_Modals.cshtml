@@ -1,18 +1,20 @@
-﻿<div class="modal" id="successModal" tabindex="-1">
+﻿<!--Success Div-->
+<div class="modal" id="successModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Sonuç</h5>
                 </div>
             <div class="modal-body">
-                <p>Veri başarıyla eklendi</p>
+                <p id="successMessage">Veri başarıyla eklendi</p>
             </div>
             <div class="modal-footer">
-                <button type="button" id="successModalCloseButton" class="btn btn-success" data-ds-dismiss="modal">Close</button
+                <button type="button" id="successModalCloseButton" class="btn btn-success" data-ds-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+<!--Fail Div-->
 <div class="modal" id="failModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -20,10 +22,10 @@
                 <h5 class="modal-title">Sonuç</h5>
                 </div>
             <div class="modal-body">
-                <p>Veri eklenemedi</p>
+                <p id="errorMessage">Veri eklenemedi</p>
             </div>
             <div class="modal-footer">
-                <button type="button" id="failModalCloseButton" class="btn btn-danger" data-ds-dismiss="modal">Close</button
+                <button type="button" id="failModalCloseButton" class="btn btn-danger" data-ds-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
