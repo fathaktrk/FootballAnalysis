@@ -1,0 +1,37 @@
+﻿@model Compare
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            
+            var TeamOneName = "@Model.TeamOneName";
+            var TeamTwoName = "@Model.TeamTwoName";
+            var TeamOneWininAway = @Model.TeamOneWininAway;
+            var TeamTwoWininHome = @Model.TeamTwoWininHome;
+            var TeamTwoHomeDraw  = @Model.TeamTwoHomeDraw;
+
+            var data = google.visualization.arrayToDataTable([
+                ['Takım', 'Kazanma'],
+
+                [TeamOneName, TeamOneWininAway],
+                [TeamTwoName, TeamTwoWininHome],
+                ['Beraberlik', TeamTwoHomeDraw]
+
+            ]);
+
+            var options = {
+                title: TeamTwoName + ' Evinde Kazanma ve Beraberlik Oranları',
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="piechart3"></div>
+</body>

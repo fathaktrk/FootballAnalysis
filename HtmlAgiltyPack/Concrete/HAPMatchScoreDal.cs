@@ -46,7 +46,7 @@ namespace HtmlAgiltyPack.Concrete
             return MatchScores;
         }
 
-        public List<MatchScore> GetAllMatchScores(int year)// tüm maç skorlarının çekildiği yer.
+        public List<MatchScore> GetAllMatchScores() //tüm maç skorlarının çekildiği yer.
         {
             string urlAdress = "https://www.transfermarkt.com.tr/" + TeamInfo.InUrlTeamName + "/spielplandatum/verein/" + TeamInfo.InUrlTeamNumber + "/0?saison_id=&wettbewerb_id=&day=&heim_gast=heim&punkte=&datum_von=&datum_bis=";
             var doc = WebHtml.Load(urlAdress);
@@ -64,8 +64,8 @@ namespace HtmlAgiltyPack.Concrete
                     OpponentName = opponent,
                     HomeScore = Convert.ToInt32(scores[0]),
                     OpponentScore = Convert.ToInt32(scores[1].Replace(" U.s.", "").Replace(" P.s.","")),
-                    SeasonID = year,
-                    date = date
+                    SeasonID =2021,
+                    date = date.Replace("Mo.", "").Replace("Di.", "").Replace("Mi.", "").Replace("Do.", "").Replace("Fr.", "").Replace("Sa.", "").Replace("So.", "")
                 });
             }
             return MatchScores;

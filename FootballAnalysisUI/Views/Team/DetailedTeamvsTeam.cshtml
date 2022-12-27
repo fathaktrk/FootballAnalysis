@@ -1,0 +1,60 @@
+﻿@model Compare
+<html>
+<head>
+    <title>@Model.TeamOneName-@Model.TeamTwoName Karşılaştırması</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="mt-4 p-5 bg-white text-white rounded">
+            <center>
+                <div class="row">
+                    <div class="col-5">
+                        <img src="https://tmssl.akamaized.net/images/wappen/head/@(Model.TeamOneURLNumber.ToString()).png?lm=1406739071" width="30%">
+                        <h3 class="text-black">@Model.TeamOneName</h>
+                    </div>
+                    <div class="col-2">
+                        <center><img src="../assets/img/versus.png" style="width:60%" /> </center>
+                    </div>
+                    <div class="col-5">
+                        <img src="https://tmssl.akamaized.net/images/wappen/head/@(Model.TeamTwoURLNumber.ToString()).png?lm=1406739071" width="30%">
+                        <h3 class="text-black">@Model.TeamTwoName</h3>
+                    </div>
+                </div>
+                <p class="text-black">İki takım arasında yapılan maçlara göre tüm istatistikler.</p>
+            </center>
+        </div>
+        <div class="row">
+            <div class="row">
+                @Html.Partial("~/Views/Team/Partials/_Infos.cshtml")
+            </div>
+        </div>
+        <div class="row">
+            <div><center> <p>Kazanma Durumlarına Göre İstatistik ve Oranları </p> </center> </div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_WinRateGraphicAllMatches.cshtml")
+            </div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_WinRateGraphicOneTeamHome.cshtml")
+            </div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_WinRateGraphicTwoTeamHome.cshtml")
+            </div>
+        </div>
+        <div class="row">
+            <div><center> <p>Gol Atma Durumuna Göre İstatistik ve Oranları</p> </center></div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_GoalRateGraphicAllMatches.cshtml")
+            </div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_GoalRateGraphicOneTeamHome.cshtml")
+            </div>
+            <div class="col-4">
+                @Html.Partial("~/Views/Team/Partials/_GoalRateGraphicTwoTeamHome.cshtml")
+            </div>
+        </div>
+</body>

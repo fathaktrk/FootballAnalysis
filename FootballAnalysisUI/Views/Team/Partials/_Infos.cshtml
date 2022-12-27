@@ -1,0 +1,54 @@
+﻿@model Compare
+
+<div class="col-6">
+    @if (Model.TeamOneHomeInfo() != null)
+    {
+        <div class="alert alert-success">
+            <strong>Başarılı! </strong> @Model.TeamOneHomeInfo()
+        </div>
+    }
+    @if (Model.TeamTwoHomeInfo() != null)
+    {
+        <div class="alert alert-success">
+            <strong>Başarılı! </strong> @Model.TeamOneHomeInfo()
+        </div>
+    }
+    @if (Model.TeamOneHomeGoalInfo() != null)
+    {
+        <div class="alert alert-success">
+            <strong>Başarılı! </strong> @Model.TeamOneHomeGoalInfo()
+        </div>
+    }
+    @if (Model.TeamTwoHomeGoalInfo() != null)
+    {
+        <div class="alert alert-success">
+            <strong>Başarılı! </strong> @Model.TeamTwoHomeGoalInfo()
+        </div>
+    }
+</div>
+<div class="col-6">
+    @if (Model.TeamOneAwayInfo() != null)
+    {
+        <div class="alert alert-info">
+            <strong>Başarılı! </strong> @Model.TeamOneAwayInfo()
+        </div>
+    }
+    @if (Model.TeamTwoAwayInfo() != null)
+    {
+        <div class="alert alert-info">
+            <strong>Başarılı! </strong> @Model.TeamTwoAwayInfo()
+        </div>
+    }
+    @if (Model.TeamOneAwayGoalInfo() != null)
+    {
+        <div class="alert alert-info">
+            <strong>Başarılı! </strong> @Model.TeamOneAwayGoalInfo()
+        </div>
+    }
+    @if (Model.TeamTwoAwayGoalInfo() != null)
+    {
+        <div class="alert alert-info">
+            <strong>Başarılı! </strong> @Model.TeamTwoAwayGoalInfo()
+        </div>
+    }
+</div>

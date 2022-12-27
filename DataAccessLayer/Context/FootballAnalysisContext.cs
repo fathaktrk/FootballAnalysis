@@ -17,5 +17,6 @@ namespace DataAccessLayer.Context
         public DbSet<MatchScore> MatchScores { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<TeamInfo> TeamInfos { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

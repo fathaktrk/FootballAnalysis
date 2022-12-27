@@ -1,0 +1,52 @@
+﻿<div class="col-4">
+    <div class="card h-50">
+        <div class="card-header">
+            <center>
+                <h4>Kullanıcı Ekle </h4>
+            </center>
+            <p>Yeni Admin eklemek için bilgileri giriniz.</p>
+        </div>
+        <div class="card-body">
+                <label>
+                    Kullanıcı Adını Giriniz
+                </label>
+                <br />
+                <input class="form-control" name="Username" id="UsernameText" />
+                <br />
+                <label>
+                    Şifre Belirleyiniz:
+                </label>
+                <br />
+                <input class="form-control" name="Password" id="PasswordText" />
+                <br />
+                <label>
+                   Rolünü Belirleyiniz:
+                </label>
+                <br />
+                <input class="form-control" name="Role" id="RoleText" />
+                <br />
+                <center> <button type="submit" id="add" class="btn btn-primary">Veritabanına Ekle</button> </center>
+                </input>
+                <label>@Model</label>
+            <br />
+        </div>
+    </div>
+    <span id="result"></span>
+</div>
+<script>
+    $("#add").click(() => {
+        $.post("AddUser", { "Username": $("#UsernameText").val(), "Password": $("#PasswordText").val(), "Role": $("#RoleText").val() }, function (data) {
+
+            if(data=="Başarılı") {
+                $("#successModal").modal('show');
+            } else {
+                $("#failModal").modal('show');
+            }
+            
+        
+        
+        });
+        //      Metod                                               değerler                                                           dönen değerle ne yapılacağı
+
+    });
+</script>

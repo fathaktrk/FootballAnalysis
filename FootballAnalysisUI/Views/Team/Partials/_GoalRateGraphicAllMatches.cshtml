@@ -1,0 +1,40 @@
+﻿@model Compare
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+            var TeamOneName = "@Model.TeamOneName";
+            var TeamTwoName = "@Model.TeamTwoName";
+            var TeamOneGoalAll = @Model.TeamOneGoalAll;
+            var TeamTwoGoalAll = @Model.TeamTwoGoalAll;
+
+            var data = new google.visualization.arrayToDataTable([
+                ['Takım', 'Gol'],
+                [TeamOneName, TeamOneGoalAll],
+                [TeamTwoName, TeamTwoGoalAll],
+                ]);
+
+            var options = {
+                legend: { position: 'none' },
+                axes: {
+                    x: {
+                        0: { side: 'top', label: 'Tüm Maçlarda Gol Sayıları' } // Top x-axis.
+                    }
+                },
+                bar: { groupWidth: "90%" }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+            // Convert the Classic options to Material options.
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        };
+    </script>
+    </script>
+</head>
+<body>
+    <div id="top_x_div"></div>
+</body>
