@@ -25,7 +25,7 @@ namespace FootballAnalysisUI.Controllers
         public IActionResult TeamList()
         {
             TeamInfoManager teamInfoManager = new TeamInfoManager(new EFTeamInfoDal());
-            var teamInfos = teamInfoManager.ListAll();
+            var teamInfos = teamInfoManager.ListAll().OrderBy(x=> x.RealTeamName).ToList();
             return View(teamInfos);
         }
 
@@ -33,7 +33,7 @@ namespace FootballAnalysisUI.Controllers
         public IActionResult TeamvsTeam()
         {
             TeamInfoManager teamInfoManager = new TeamInfoManager(new EFTeamInfoDal());
-            var teamInfos = teamInfoManager.ListAll();
+            var teamInfos = teamInfoManager.ListAll().OrderBy(x => x.RealTeamName).ToList();
             List<SelectListItem> selectListItems = new List<SelectListItem>();
             foreach (var item in teamInfos)
             {
@@ -44,7 +44,6 @@ namespace FootballAnalysisUI.Controllers
         [HttpPost]
         public IActionResult AllTeamMatchesBetweenTwoTeam(string team1, string team2)
         {
-
             TeamInfoManager teamInfoManager = new TeamInfoManager(new EFTeamInfoDal());
             var teamInfos = teamInfoManager.ListAll();
             HAPMatchScoreDal hAPMatchScoreDalTeamOne = new HAPMatchScoreDal(teamInfos.FirstOrDefault(x => x.ID == Convert.ToInt16(team1)));

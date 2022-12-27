@@ -9,7 +9,7 @@ namespace FootballAnalysisUI.Controllers
         public IActionResult Index()
         {
             SeasonManager sm = new SeasonManager(new EfSeasonDal());
-            return View(sm.ListAll());
+            return View(sm.ListAll().OrderByDescending(x=> x.SeasonYear).ToList());
         }
     }
 }

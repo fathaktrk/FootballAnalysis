@@ -1,6 +1,6 @@
 ﻿@model List<EntityLayer.Concrete.TeamInfo>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <title>Tüm Takımlar</title>
     <meta charset="utf-8">
@@ -33,7 +33,7 @@
                             <tr>
                                 <td> <img src="https://tmssl.akamaized.net/images/wappen/head/@(item.InUrlTeamNumber.ToString()).png?lm=1406739071" width="15%"> </td>
                                 <td>@item.RealTeamName</td>
-                                <td> <button class="btn btn-success"> <a class="btn btn-sucess" href="AllTeamMatches?ID=@item.ID">Git</a> </button>  </td>
+                                <td> <button class="btn btn-success"> <a class="btn btn-success" href="AllTeamMatches?ID=@item.ID">Git</a> </button>  </td>
                             </tr>
                         }
                     </tbody>
