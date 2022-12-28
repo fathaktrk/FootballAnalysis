@@ -11,7 +11,7 @@ namespace BusinessLayer.Abstract
         public void Add(T t);
 
 
-        public void Add(List<T> list);
+        public void Add(List<T> list); //ekle
 
         public List<T> ListAll();
 
