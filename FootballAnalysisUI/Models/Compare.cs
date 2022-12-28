@@ -1,6 +1,6 @@
 ﻿namespace FootballAnalysisUI.Models
 {
-    public class Compare
+    public class compare  //karşılaştırma
     {
         public string TeamOneName { get; set; }
         public int TeamOneGoalAll { get; set; }
